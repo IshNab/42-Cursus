@@ -6,13 +6,13 @@
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:19:13 by inabakka          #+#    #+#             */
-/*   Updated: 2024/11/26 15:52:02 by inabakka         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:16:04 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy (char *dest, char *src, size_t destsize)
+size_t	ft_strlcpy(char *dest, char *src, size_t destsize)
 {
 	size_t	src_len;
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:21:38 by inabakka          #+#    #+#             */
-/*   Updated: 2024/11/25 16:26:17 by inabakka         ###   ########.fr       */
+/*   Updated: 2024/12/03 15:55:22 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int main(void)
 	result = ft_memchr(str, c, 10);
 	if (result)
 	{
-		printf("The first occurence of '%c' in '%s' is '%c'.\n", c , str, *result);
+		printf("The first occurence of 
+		'%c' in '%s' is '%c'.\n", c , str, *result);
 	}
 	else
 	{

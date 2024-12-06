@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd                                      :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:24:11 by inabakka          #+#    #+#             */
-/*   Updated: 2024/11/27 17:08:11 by inabakka         ###   ########.fr       */
+/*   Updated: 2024/12/02 12:01:06 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int i;
+	int	i;
 
+	if (s == NULL)
+		return ;
 	i = 0;
-	while (s != '\0')
+	while (s[i])
 	{
 		write(fd, &s[i], 1);
 		i++;

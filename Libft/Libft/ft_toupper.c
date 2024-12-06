@@ -6,7 +6,7 @@
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:19:54 by inabakka          #+#    #+#             */
-/*   Updated: 2024/11/25 16:27:04 by inabakka         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:06:30 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_toupper(int c)
 {
-	if(c >= 'a' && c <= 'z')
-		return c - 32;
-	return (0);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
 /*
 #include <stdio.h>

@@ -6,7 +6,7 @@
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:41:35 by inabakka          #+#    #+#             */
-/*   Updated: 2024/11/26 20:02:45 by inabakka         ###   ########.fr       */
+/*   Updated: 2024/11/29 16:29:54 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_substr(char const *string, unsigned int start, size_t len)
 {
-	unsigned char	*sub_str;
-	int				string_len;
-	size_t			i;
+	char	*sub_str;
+	size_t	string_len;
+	size_t	i;
 
 	if (!string)
 		return (NULL);
 	string_len = ft_strlen(string);
 	if (start >= string_len)
 		return (ft_strdup(""));
-	else if (len > string_len - start)
+	if (len > string_len - start)
 		len = string_len - start;
 	sub_str = ft_calloc(len + 1, sizeof(char));
 	if (!sub_str)

@@ -6,7 +6,7 @@
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:41:21 by inabakka          #+#    #+#             */
-/*   Updated: 2024/11/25 19:55:44 by inabakka         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:39:39 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,19 @@ char	*ft_strdup(const char *src)
 {
 	int		org_size;
 	char	*dup;
+	size_t	i;
 
 	org_size = ft_strlen(src);
 	dup = (char *)malloc(sizeof(char) * (org_size + 1));
 	if (!dup)
 		return (NULL);
-	ft_strcpy(dup, src);
+	i = 0;
+	while (src[i])
+	{
+		dup[i] = src[i];
+		i++;
+	}
+	dup[i] = '\0';
 	return (dup);
 }
 

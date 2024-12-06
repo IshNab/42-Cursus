@@ -6,19 +6,19 @@
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:20:07 by inabakka          #+#    #+#             */
-/*   Updated: 2024/11/25 16:23:57 by inabakka         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:17:18 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c) 
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		{
-			return c + 32;
-		}
-	return(c);
+	{
+		return (c + 32);
+	}
+	return (c);
 }
 /*
 #include <stdio.h>

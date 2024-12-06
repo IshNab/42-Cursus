@@ -6,7 +6,7 @@
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:20:37 by inabakka          #+#    #+#             */
-/*   Updated: 2024/11/28 12:53:04 by inabakka         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:11:19 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int main(void)
 		printf("The last occurence of '%c' in the string '%s' is '%c'.\n", 
 			needle, str, *result);
 	else
-		printf("The character you are searching for does not exist in the string.\n");
+		printf("The character you are searching for 
+		does not exist in the string.\n");
 	return (0);
 }
 */
