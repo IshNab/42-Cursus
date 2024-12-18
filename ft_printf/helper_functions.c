@@ -11,19 +11,19 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+//to print a percent
 int	ft_print_percent(void)
 {
 	write(1, "%", 1);
 	return (1);
 }
-
+//to print a character
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
-
+//to print a string
 int	ft_putstr(char *str)
 {
 	int	count;
@@ -41,7 +41,7 @@ int	ft_putstr(char *str)
 	}
 	return (count);
 }
-
+//to print a number
 int	ft_putnbr(int nb)
 {
 	int	count;
@@ -50,7 +50,6 @@ int	ft_putnbr(int nb)
 	if (nb == -2147483648)
 	{
 		count += write(1, "-2147483648", 11);
-		//return ;
 	}
 	else if (nb < 0)
 	{
