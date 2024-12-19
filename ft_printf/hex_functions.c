@@ -50,13 +50,18 @@ int	ft_puthex_upper(unsigned int nb)
 
 	counter = 0;
 	symbols = "0123456789ABCDEF";
-	if (nb >= 16)
+	//if nb < 16 --> convert to hex, write, and increment count
+	if (nb < 16)
+	{
+		counter += ft_putchar(symbols[nb]);
+	}
+	//else if nb >= 16, use recusion to unravel nb then go back up the stack
+	//by taking modulo of 16 then converting that to hex
+	else
 	{
 		counter += ft_puthex_upper(nb / 16);
 		counter += ft_puthex_upper(nb % 16);
 	}
-	else
-		counter += ft_putchar(symbols[nb % 16]);
 	return (counter);
 }
 
