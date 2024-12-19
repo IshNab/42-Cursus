@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 
-static int	ft_printchar(int c);
 static int	ft_print_format(char specifier, va_list ap);
 
 int	ft_printf(const char *format, ...)
@@ -38,18 +37,12 @@ int	ft_printf(const char *format, ...)
 			count += ft_print_format(*(++format), ap);
 		//write each character of the initial string
 		else
-			count += ft_printchar(*format);
+			count += ft_putchar(*format);
 		format++;
 	}
 	//clean up va_list ap after processing
 	va_end (ap);
 	return (count);
-}
-
-static int	ft_printchar(int c)
-{
-	write(1, &c, 1);
-	return (1);
 }
 
 static int	ft_print_format(char specifier, va_list ap)
