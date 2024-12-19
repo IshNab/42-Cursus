@@ -15,6 +15,7 @@
 int	ft_print_percent(void)
 {
 	write(1, "%", 1);
+	//return 1 because printf needs to return how many characters where printed
 	return (1);
 }
 //to print a character
@@ -29,6 +30,7 @@ int	ft_putstr(char *str)
 	int	count;
 
 	count = 0;
+	//if string does not exist, just write (null)
 	if (!str)
 	{
 		write (1, "(null)", 6);
