@@ -14,9 +14,8 @@
 //to print a percent
 int	ft_print_percent(void)
 {
-	write(1, "%", 1);
 	//return 1 because printf needs to return how many characters where printed
-	return (1);
+	return (write(1, "%", 1));
 }
 //to print a character
 int	ft_putchar(char c)
