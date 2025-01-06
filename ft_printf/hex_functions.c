@@ -74,9 +74,6 @@ use unsigned because addresses/ memory values cannot be negative (only zero or p
 */
 int	ft_print_ptr(unsigned long nb)
 {
-	int		counter;
-
-	counter = 0;
 	//nb is an integer so to check for null pointer, need to check nb == 0
 	if (nb == 0)
 	{
@@ -86,7 +83,6 @@ int	ft_print_ptr(unsigned long nb)
 	//print "0x" to indicate pointer, interpret pointer values as memory addresses
 	//indicates number is written in hexadecimal format
 	write(1, "0x", 2);
-	counter += ft_puthex_lower(nb);
 	//return +2 to include the 2 characters from "0x"
-	return (counter + 2);
+	return (ft_puthex_lower(nb) + 2);
 }
