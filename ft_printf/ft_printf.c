@@ -58,7 +58,13 @@ static int	ft_print_format(char specifier, va_list ap)
 	//print a string
 	else if (specifier == 's')
 		count += ft_putstr(va_arg(ap, char *));
-	//void * pointer, printed in hexadecimal format (base 16)
+	/*void * pointer, printed in hexadecimal format (base 16)
+	use unsigned long long bc guaranteed to be 64 bits wide
+ 	can safely hold memory address of a pointer
+  	ensures that pointer's value (the memory address it holds) is displayed correctly
+   	avoid truncation or sign related issues
+    	unsigned means number is non-negative, memory addresses are non-negative
+	*/
 	else if (specifier == 'p')
 		count += ft_print_ptr(va_arg(ap, unsigned long long));
 	//print a decimal or integer base 10 number
