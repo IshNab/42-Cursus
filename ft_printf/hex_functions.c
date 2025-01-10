@@ -86,3 +86,29 @@ int	ft_print_ptr(unsigned long nb)
 	//return +2 to include the 2 characters from "0x"
 	return (ft_puthex_lower(nb) + 2);
 }
+
+//alternative ft_puthex function that combines lower and upper!!
+int    ft_puthex(unsigned long nb, char case_type)
+{
+    int     counter;
+    char    *symbols_lower;
+    char    *symbols_upper;
+
+    counter = 0;
+    symbols_lower = "0123456789abcdef";
+    symbols_upper = "0123456789ABCDEF";
+    if (nb < 16 && case_type == 'x')
+      counter += ft_putchar(symbols_lower[nb]);
+    else if (nb < 16 && case_type == 'X')
+      counter += ft_putchar(symbols_upper[nb]);
+    else
+    {
+      counter += ft_puthex(nb / 16, case_type);
+      counter += ft_puthex(nb % 16, case_type);
+    }
+    return (counter);
+}
+
+/*
+for using ft_puthex with ft_print_ptr, need to pass casetype as 'x'
+*/
