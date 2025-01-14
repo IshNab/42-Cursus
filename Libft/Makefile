@@ -41,8 +41,20 @@ SRCS = ft_isalpha.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
+# Bonus source files
+BONUS_SRCS = ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c
+
 # Object files
 OBJS = $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 # Default rule to compile the library
 all: $(NAME)
@@ -62,14 +74,18 @@ $(NAME): $(OBJS)
 
 # Clean rule to remove object files
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 # Fclean rule to remove object files and the executable
 fclean: clean
 	rm -f $(NAME) main
 
+# Rule to compile the bonus functions and add them to the library
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS)
+
 # Rule to clean and recompile everything
 re: fclean all
 
 # Phony targets to prevent conflicts with files
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re run bonus
