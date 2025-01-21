@@ -6,7 +6,7 @@
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:27:36 by inabakka          #+#    #+#             */
-/*   Updated: 2025/01/13 16:57:19 by inabakka         ###   ########.fr       */
+/*   Updated: 2025/01/20 11:55:04 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		//if the list is empty, the new head is set to new
 		if(*lst == NULL)
-		{
 			*lst = new;
-		}
 		else
 		{
 			/*create a temporary pointer to iterate through to the last node
@@ -43,8 +41,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			//set the next node of temp to new
 			temp->next = new;
 		}
-		//new node must be last, so set it's pointer to NULL
-		//then set the node after the last one to NULL
-		new->next = NULL;
+		//do not have to set new->next = NULL, because new was initialized to NULL
 	}
 }

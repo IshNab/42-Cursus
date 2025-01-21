@@ -6,7 +6,7 @@
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:28:43 by inabakka          #+#    #+#             */
-/*   Updated: 2025/01/14 18:16:44 by inabakka         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:00:21 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ returns a new list or NULL if allocation fails
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	//new is the new lst that I am creating
+	//new lst that I am creating
 	t_list	*new_lst;
 	//temporary pointer to a new node
 	t_list	*new_node;
+	void	*cont;
 	//check if original lst and f exist
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return(NULL);
 	//initialize the new list
 	new_lst = NULL;
@@ -37,19 +38,27 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		/*
-		apply function f onto the content of lst, then create a new list from that
+		apply function f onto the content of lst
 		function f returns a void pointer which is the input for the function lstnew
-		finally assign that to the new node
+		*/
+		cont = (*f)(lst->content);
+		/*
+		create a new node from applying f onto list content
+		assign result of function f to the new node
 		create a new node, input is a void pointer, processed by function 'f' given as an input
 		*/
-		new_node = ft_lstnew(f(lst->content));
+		new_node = ft_lstnew(cont);
 		//if creating the new node with ft_lstnew doesn't work, clear the list and return NULL
 		if(!new_node)
 		{
+			//if there is content, delete it
+			//need to explicitly clear the content, otherwise it is freely floating out there
+			if(cont)
+				(*del)(cont);
 			//if memory allocation fails when creating a new node, clear nodes you already made
-			//free all nodes in the new list and calls delete on their content
+			//free all nodes in the new list and delete the content
 			ft_lstclear(&new_lst, del);
-			//return NULL or return the new_lst?
+			//return NULL to show memory allocation failed
 			return(NULL);
 		}
 		//if succesful node creation, it is added to the new list, append node to list
