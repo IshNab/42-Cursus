@@ -17,6 +17,21 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+/*
+first: declare the struct as s_list
+s_list is the element itself
+node is a structure that contains data
+node contains content and pointer to the next element (*next)
+*/
+typedef struct s_list
+{
+	//content is the data contained in the node
+	//void* allows to store any kind of data
+	void				*content;
+	//next is address of the next node or NULL if the next node is the last one
+	struct s_list	*next;
+}t_list;
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -51,5 +66,14 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
