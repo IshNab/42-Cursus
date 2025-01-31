@@ -21,17 +21,6 @@ int	main(void)
 	// line = get_next_line(fd);
 	// printf("line#%d --- %s",count++, line);
 	// line = get_next_line(fd);
-	// printf("line#%d --- %s",count++, line);
-	// line = get_next_line(fd);
-	// printf("line#%d --- %s",count++, line);
-	// line = get_next_line(fd);
-	// printf("line#%d --- %s",count++, line);
-	// line = get_next_line(fd);
-	// printf("line#%d --- %s",count++, line);
-	// line = get_next_line(fd);
-	// printf("line#%d --- %s",count++, line);
-	// line = get_next_line(fd);
-	// printf("line#%d --- %s",count++, line);
 	// free(line);
 	// while 1 is a forever loop, goes until it hits a break
 	// read from the file endlessly
