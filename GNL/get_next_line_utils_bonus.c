@@ -6,11 +6,11 @@
 /*   By: inabakka <inabakka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:38:35 by inabakka          #+#    #+#             */
-/*   Updated: 2025/01/31 15:16:47 by inabakka         ###   ########.fr       */
+/*   Updated: 2025/02/05 18:27:03 by inabakka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strdup(const char *src)
 {

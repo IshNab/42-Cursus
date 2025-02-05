@@ -15,13 +15,6 @@ int	main(void)
 		printf("Error opening one or both files, try again.\n");
 		return (1);
 	}
-	// line = get_next_line(fd);
-	// printf("line#%d --- %s",count++, line);
-	// line = get_next_line(fd);
-	// printf("line#%d --- %s",count++, line);
-	// line = get_next_line(fd);
-	// printf("line#%d --- %s",count++, line);
-	// free(line);
 	printf("BUFFER_SIZE: %d\n", BUFFER_SIZE);
 	while(1)
 	{
@@ -39,6 +32,17 @@ int	main(void)
 		free(line2);
 		line1 = NULL;
 		line2 = NULL;
+	}
+	while(1)
+	{
+		line1 = get_next_line_bonus(fd1);
+		if(line1 == NULL )
+		{
+			free(line1);
+			break;
+		}
+		free(line1);
+		line1 = NULL;
 	}
 	printf("\n");
 	close(fd1);

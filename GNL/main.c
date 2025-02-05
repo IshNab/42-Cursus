@@ -1,4 +1,5 @@
 #include "get_next_line.h"
+#include <stdio.h>
 
 int	main(void)
 {
@@ -7,8 +8,7 @@ int	main(void)
 	int		count;
 	
 	count = 1;
-	fd = open("text.txt", O_RDONLY);
-	//if file not found, negative integer represents an error
+	fd = open("text1.txt", O_RDONLY);
 	if (fd == -1)
 	{
 		printf("Error opening the file, try again.\n");
@@ -20,21 +20,21 @@ int	main(void)
 	// printf("line#%d --- %s",count++, line);
 	// line = get_next_line(fd);
 	// printf("line#%d --- %s",count++, line);
-	// line = get_next_line(fd);
 	// free(line);
-	// while 1 is a forever loop, goes until it hits a break
-	// read from the file endlessly
+	printf("BUFFER_SIZE = %d\n", BUFFER_SIZE);
 	while(1)
 	{
 		line = get_next_line(fd);
-		//increment count everytime we get a new line
 		printf("line#%d --- %s", count++, line);
-		//allow us to break out of the loop
 		if(line == NULL)
+		{
+			free(line);
 			break;
+		}
 		free(line);
 		line = NULL;
 	}
+	printf("\n");
 	close(fd);
 	return(0);
 }
